@@ -1,0 +1,331 @@
+/* --- LAYOUT & NAVIGATION --- */
+.navbar {
+    background: rgba(5, 12, 35, 0.92);
+    color: var(--white);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 20px 60px rgba(50, 240, 255, 0.12);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(50, 240, 255, 0.16), transparent);
+    animation: shimmer 3s infinite;
+    z-index: 0;
+}
+
+.nav-brand {
+    font-size: 1.9rem;
+    font-weight: 900;
+    z-index: 1;
+    text-shadow: 0 0 18px rgba(50, 240, 255, 0.4);
+    letter-spacing: 1.2px;
+    animation: fadeInUp 0.6s ease;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-links button {
+    background: rgba(50, 240, 255, 0.12);
+    border: 1px solid rgba(50, 240, 255, 0.3);
+    color: var(--white);
+    cursor: pointer;
+    opacity: 0.95;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    border-radius: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    text-shadow: 0 0 6px rgba(50, 240, 255, 0.3);
+}
+
+.nav-links button:hover {
+    opacity: 1;
+    background: rgba(50, 240, 255, 0.2);
+    border-color: rgba(50, 240, 255, 0.55);
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(50, 240, 255, 0.35);
+}
+
+/* --- AUTHENTICATION VIEW --- */
+.auth-container {
+    max-width: 500px;
+    margin: 10vh auto;
+    background: var(--bg-panel);
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: 0 30px 90px rgba(50, 240, 255, 0.12);
+    text-align: center;
+    animation: fadeInUp 0.8s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: -45%;
+    right: -40%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(255, 51, 255, 0.2), transparent 35%);
+    animation: rotate 18s linear infinite;
+    z-index: 0;
+}
+
+.auth-container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--neon-magenta);
+    font-size: 2rem;
+    font-weight: 900;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 18px rgba(255, 51, 255, 0.35);
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-main);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: rgba(50, 240, 255, 0.75);
+    box-shadow: 0 0 30px rgba(50, 240, 255, 0.18);
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+.auth-switch {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--caramel);
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+}
+
+.auth-switch:hover {
+    color: var(--caramel-dark);
+    text-decoration: none;
+}
+
+/* --- DASHBOARDS & CARDS --- */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: rgba(15, 22, 55, 0.88);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 18px 60px rgba(50, 240, 255, 0.09);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -40%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(255, 51, 255, 0.18), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 28px 80px rgba(50, 240, 255, 0.16);
+    border-color: rgba(50, 240, 255, 0.2);
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card h3 {
+    color: var(--neon-cyan);
+    margin-bottom: 0.8rem;
+    font-size: 1.36rem;
+    font-weight: 900;
+    text-shadow: 0 0 12px rgba(50, 240, 255, 0.25);
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* --- TABLES --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background: rgba(10, 18, 40, 0.92);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(50, 240, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: fadeInUp 0.8s ease;
+}
+
+.data-table th {
+    background: rgba(50, 240, 255, 0.12);
+    color: var(--neon-cyan);
+    font-weight: 700;
+    padding: 1.2rem;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+}
+
+.data-table td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease;
+    color: var(--text-main);
+}
+
+.data-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.data-table tbody tr:hover {
+    background: rgba(50, 240, 255, 0.08);
+    transform: scale(1.01);
+    box-shadow: inset 0 0 28px rgba(50, 240, 255, 0.1);
+}
+
+/* Hover effects for rows */
+table tbody tr {
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+table tbody tr:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+table tbody tr:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+table tbody tr:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+table tbody tr:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+table tbody tr:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--caramel);
+}
+
+/* --- FORMS & PANELS --- */
+.panel {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(43, 103, 119, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease;
+    border: 2px solid rgba(43, 103, 119, 0.15);
+}

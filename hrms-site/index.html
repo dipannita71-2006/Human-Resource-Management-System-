@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odoo HRMS - Hackathon Prototype</title>
+    <link rel="stylesheet" href="variables-and-base.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+
+<body>
+
+    <!-- Main Application Container -->
+    <div id="app">
+
+        <!-- Navbar (Hidden on Auth) -->
+        <nav id="navbar" class="navbar hidden">
+            <div class="nav-brand">Odoo HRMS</div>
+            <div class="nav-links">
+                <span id="user-greeting" style="margin-right: 15px; font-weight: 300;"></span>
+                <button onclick="App.navigate('dashboard')" title="Go to Dashboard">Dashboard</button>
+                <button onclick="App.navigate('attendance_log')" title="View attendance records">Attendance</button>
+                <button onclick="App.navigate('leave_apply')" title="Apply for leave">Leave</button>
+                <button onclick="App.navigate('salary_slip')" title="View salary information">Payroll</button>
+                <button onclick="App.navigate('expenses')" title="Manage expenses">Expenses</button>
+                <button onclick="App.navigate('profile')" title="View your profile">Profile</button>
+                <button onclick="App.logout()" title="Sign out">Logout</button>
+                <button onclick="App.resetDb()" title="Reset demo data"
+                    style="margin-left:8px; background:transparent; border:1px solid var(--white); color:var(--white);">Reset
+                    Demo Data</button>
+            </div>
+        </nav>
+
+        <!-- Dynamic Content Container -->
+        <div id="main-content" class="container"></div>
+
+    </div>
+
+    <!-- Link to external JavaScript -->
+    <script src="app.js"></script>
+    <script src="app-ui.js"></script>
+</body>
+
+</html>
